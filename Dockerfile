@@ -6,7 +6,5 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 # Exponer los puertos necesarios
 EXPOSE 1883  
-EXPOSE 9001 
+EXPOSE 8080 
 
-# Configuración adicional (solo si es necesario)
-# Puedes agregar configuraciones adicionales según lo que necesites.
