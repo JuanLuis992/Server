@@ -1,10 +1,8 @@
-# Usamos la imagen base de Mosquitto de Eclipse
-FROM eclipse-mosquitto
+# mosquitto.conf
 
-# Copiar la configuración personalizada de Mosquitto
-COPY mosquitto.conf /mosquitto/config/mosquitto.conf
+# Permitir conexiones anónimas (sin autenticación)
+allow_anonymous true
 
-# Exponer los puertos necesarios
-EXPOSE 1883  
-EXPOSE 8080 
-
+# WebSocket listener en el puerto 8080
+listener 8080
+protocol websockets
