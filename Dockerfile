@@ -1,8 +1,8 @@
-# mosquitto.conf
+# Usamos la imagen oficial de Eclipse Mosquitto
+FROM eclipse-mosquitto:2.0
 
-# Permitir conexiones anónimas (sin autenticación)
-allow_anonymous true
+# Copiamos el archivo de configuración personalizado
+COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
-# WebSocket listener en el puerto 8080
-listener 8080
-protocol websockets
+# Railway sólo necesita que expongas el puerto WebSocket
+EXPOSE 8080
